@@ -1,0 +1,137 @@
+\documentclass[12pt,a4paper]{article}
+
+% --------------------- Packages ---------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+% --------------------- Formatting ---------------------
+\titleformat{\section}{\large\bfseries\sffamily}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries\sffamily}{\thesubsection}{1em}{}
+\renewcommand{\familydefault}{\sfdefault}
+
+% --------------------- Title ---------------------
+\title{\textbf{Project Report Title}\\ \large A concise subtitle if needed}
+\author{Your Name \\
+\small University of Warsaw, Faculty of Physics \\
+\small \texttt{your.email@uw.edu.pl}}
+\date{\today}
+
+% --------------------- Document ---------------------
+\begin{document}
+\maketitle
+\hrule
+\vspace{1em}
+
+% --------------------- Abstract ---------------------
+\begin{abstract}
+\noindent
+This report presents [brief background], the aim of the project [objective], methodology used [methods], and a summary of the findings [key results]. The significance of the results is discussed with respect to [context/impact].
+\end{abstract}
+
+\vspace{1em}
+\hrule
+\vspace{1.5em}
+
+% --------------------- Sections ---------------------
+
+\section{Introduction}
+Brief overview of the theoretical background and relevance of the work. State the objective of the project clearly. If applicable, define a hypothesis or scientific question.
+
+\section{Required Equipment and Materials}
+
+\subsection{Equipment}
+\begin{table}[H]
+    \centering
+    \caption{List of Equipment}
+    \begin{tabular}{@{}llll@{}}
+        \toprule
+        \textbf{Device} & \textbf{Model} & \textbf{Manufacturer} & \textbf{Function} \\
+        \midrule
+        Spin Coater & KW-4A & Chemat & Thin film deposition \\
+        Oven & Memmert ULE 400 & Memmert & Thermal treatment \\
+        Multimeter & Fluke 115 & Fluke & Electrical measurements \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Ingredients / Materials}
+\begin{table}[H]
+    \centering
+    \caption{Materials and Chemicals}
+    \begin{tabular}{@{}llll@{}}
+        \toprule
+        \textbf{Name} & \textbf{Purity / Grade} & \textbf{Supplier} & \textbf{Role} \\
+        \midrule
+        Ethanol & 99.9\% & Sigma-Aldrich & Solvent \\
+        Silicon Wafer & p-type, \textless100\textgreater & Wafer World & Substrate \\
+        PEDOT:PSS & 1.3 wt\% dispersion & Heraeus & Conductive layer \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Preparation}
+Describe any preparatory steps, such as:
+\begin{itemize}
+    \item Cleaning of substrates using solvents
+    \item Preheating or calibration of equipment
+    \item Solution preparation or mixing ratios
+\end{itemize}
+
+\section{Process / Experimental Procedure}
+Outline each step of the main experimental process. Include:
+\begin{itemize}
+    \item Temperatures and durations
+    \item Concentrations and volumes
+    \item Equipment settings and sequences
+\end{itemize}
+
+\section{Characterisation Techniques}
+\subsection*{Scanning Electron Microscopy (SEM)}
+\textbf{Instrument:} Zeiss Sigma 300 \\
+Used for surface morphology imaging. Operated at 5–10 kV. 
+
+\subsection*{X-ray Diffraction (XRD)}
+\textbf{Instrument:} Bruker D8 Advance \\
+Used to determine crystalline structure. Scanned from 10° to 80° in 2$\theta$.
+
+\section{Results and Discussion}
+Include figures, graphs, or tables of results:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{example-image}
+    \caption{Example result: surface morphology at 10kV SEM}
+\end{figure}
+
+Discuss trends, anomalies, and how the results align with expectations or literature.
+
+\section{Conclusions}
+Summarise:
+\begin{itemize}
+    \item Main findings
+    \item Whether objectives were met
+    \item Any limitations or sources of error
+    \item Suggestions for improvement or further research
+\end{itemize}
+
+\section*{References}
+\begin{itemize}
+    \item J. Smith et al., \textit{Journal of Applied Physics}, 2022, 120(3), 1234.
+    \item Equipment manuals and data sheets
+    \item Scientific articles, standards
+\end{itemize}
+
+\appendix
+\section*{Appendix}
+Include raw data, code, calculations, or safety data sheets.
+
+\end{document}
