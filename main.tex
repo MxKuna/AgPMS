@@ -5,15 +5,18 @@
 \usepackage[T1]{fontenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
-\usepackage[margin=2.5cm]{geometry}
+\usepackage[margin=2.2cm]{geometry}
 \usepackage{graphicx}
 \usepackage{amsmath, amssymb}
+\usepackage[version=4]{mhchem}
 \usepackage{booktabs}
+\usepackage{multirow}
 \usepackage{caption}
 \usepackage{hyperref}
 \usepackage{float}
 \usepackage{titlesec}
 \usepackage{xcolor}
+\usepackage{nopageno}
 
 % --------------------- Formatting ---------------------
 \titleformat{\section}{\large\bfseries\sffamily}{\thesection}{1em}{}
@@ -21,7 +24,7 @@
 \renewcommand{\familydefault}{\sfdefault}
 
 % --------------------- Title ---------------------
-\title{\textbf{AgPMS}\\ \large \emph{Silver nanowire PVB melamine sponge electrodes for EEG}}
+\title{\textbf{AgPMS}\\ \large \emph{Silver NWs / PVB / melamine sponge electrodes for EEG}}
 \author{KN Neuroinformatyki \& "Nanorurki" \\
 \small Uniwersytet Warszawski, Wydział Fizyki}
 \date{\today}
@@ -35,104 +38,95 @@
 % --------------------- Abstract ---------------------
 \begin{abstract}
     \noindent
-    Celem projektu jest odtworzenie i ocena skuteczności nowatorskich elektrod EEG wykonanych z elastycznej gąbki melaminowej pokrytej nanodrutami srebra. Elektrody te mają zastąpić tradycyjne elektrody żelowe w nieinwazyjnych interfejsach mózg–komputer (BCI), oferując lepszy kontakt ze skórą bez potrzeby stosowania żelu przewodzącego. Zakładamy wytworzenie elektrod o wysokiej przewodności, stabilności mechanicznej oraz zdolności do rejestracji sygnałów EEG porównywalnej z klasycznymi rozwiązaniami. Projekt ma na celu potwierdzenie parametrów technicznych i funkcjonalnych opisanych w literaturze oraz ich potencjalne zastosowanie w praktycznych systemach BCI.
-
+    Celem projektu jest odtworzenie i ocena skuteczności nowatorskich elektrod EEG z elastycznej gąbki melaminowej pokrytej nanodrutami, które mają zastąpić tradycyjne elektrody żelowe w nieinwazyjnych interfejsach mózg–komputer (BCI). Elektrody te mają zapewniać lepszy kontakt ze skórą bez użycia żelu przewodzącego, przy zachowaniu wysokiej przewodności, stabilności mechanicznej i jakości sygnału EEG. Projekt zakłada weryfikację parametrów opisanych w literaturze oraz ocenę ich przydatności w systemach BCI.
 \end{abstract}
 
 \vspace{1em}
 \hrule
-\vspace{1.5em}
+\vspace{1em}
 
 % --------------------- Sections ---------------------
 
 \section{Wprowadzenie}
-Brief overview of the theoretical background and relevance of the work. State the objective of the project clearly. If applicable, define a hypothesis or scientific question.
+Interfejsy mózg-komputer (BCI) to dynamicznie rozwijająca się dziedzina technologii, umożliwiająca bezpośrednią komunikację między mózgiem a urządzeniami zewnętrznymi. Systemy te, poprzez akwizycję i analizę sygnałów elektroencefalograficznych (EEG), otwierają nowe możliwości w wielu obszarach, takich jak diagnostyka i leczenie chorób, wspomaganie osób z niepełnosprawnościami ruchowymi, czy monitorowanie stanu zdrowia.
 
-\section{Niezbędne materiały i sprzęt}
+Jednym z kluczowych wyzwań w rozwoju nieinwazyjnych BCI jest zapewnienie skutecznego i komfortowego kontaktu elektrod ze skórą, szczególnie w obszarach owłosionych. Tradycyjnie stosowane elektrody Ag/AgCl, choć charakteryzują się niską impedancją i stabilnością potencjału, wymagają użycia specjalistycznego żelu przewodzącego. Aplikacja żelu jest czasochłonna, może powodować dyskomfort, podrażnienia skóry, a nawet reakcje alergiczne. Ponadto, żel wysycha, co prowadzi do zmian impedancji i konieczności ponownej kalibracji, utrudniając długoterminowe monitorowanie.
 
-\subsection{Equipment}
+W odpowiedzi na te ograniczenia, w publikacji \emph{"A Flexible, Robust, and Gel-Free Electroencephalogram Electrode for Noninvasive Brain-Computer Interfaces"} \cite{main} przedstawiono innowacyjną, bezżelową elektrodę AgPMS. Elektroda ta, zbudowana z nanowarstwy srebra osadzonej na elastycznym podłożu z gąbki melaminowej z dodatkiem PVB, została zaprojektowana w celu przezwyciężenia problemów związanych z włosami i eliminacji potrzeby stosowania żelu. Wykazano, że materiał elektrody charakteryzuje się wysoką przewodnością, elastycznością oraz stabilnością mechaniczną i chemiczną. Co najważniejsze, testy BCI potwierdziły skuteczność elektrod AgPMS zarówno na skórze nieowłosionej, jak i owłosionej, osiągając wyniki porównywalne z konwencjonalnymi elektrodami żelowymi.
+
+Celem niniejszego projektu jest odtworzenie kluczowych wyników badań dotyczących właściwości oraz funkcjonalności elektrod AgPMS, opisanych we wspomnianej publikacji. Projekt zakłada replikację procesu wytwarzania elektrod oraz przeprowadzenie testów charakteryzujących ich parametry elektryczne, mechaniczne oraz wydajność w ramach prostego systemu BCI.
+
+\section{Badania, przyrządy i odczynniki}
+\subsection{Infrastruktura pomiarowa i procesowa}
 \begin{table}[H]
     \centering
-    \caption{List of Equipment}
-    \begin{tabular}{@{}llll@{}}
+    \begin{tabular}{@{}ll@{}}
         \toprule
-        \textbf{Device} & \textbf{Model}  & \textbf{Manufacturer} & \textbf{Function}       \\
+        \textbf{Rodzaj badania / sprzętu}       & \textbf{Funkcja}                          \\
         \midrule
-        Spin Coater     & KW-4A           & Chemat                & Thin film deposition    \\
-        Oven            & Memmert ULE 400 & Memmert               & Thermal treatment       \\
-        Multimeter      & Fluke 115       & Fluke                 & Electrical measurements \\
+        Dynamiczny analizator mechaniczny (DMA) & Pomiar wiskoelastyczności                 \\
+        Układ do cyklicznego spręzania          & Pomiary elastyczności i stabilności mech. \\
+        Rozpraszanie ramanowskie                & Analiz widm                               \\
+        Termograwimetr (TGA/DTA)                & Analiza termograwimetryczna               \\
+        Spektrometr ICP-OES                     & Pomiar stężenia pierwiastków              \\
+        SEM                                     & Ocena morfologii NWs po zdeponowaniu      \\
+        XRD                                     & Ocena struktury AgNPs                     \\
+        XPS                                     & Analiza pierwiastków powierzchniowych     \\
+        \midrule
+        Mieszadło magnetyczne                   & Mieszanie roztworów podczas syntezy       \\
+        Komora próżniowa                        & Usuwanie gazu z porów gąbki               \\
+        Płyta grzewcza                          & Synteza AgNWs                             \\
+        Wirówka                                 & Oczyszczanie sedymentacyjne               \\
         \bottomrule
     \end{tabular}
 \end{table}
 
-\subsection{Ingredients / Materials}
+\subsection{Materiały / Odczynniki}
 \begin{table}[H]
     \centering
-    \caption{Materials and Chemicals}
-    \begin{tabular}{@{}llll@{}}
+    \begin{tabular}{@{}lll@{}}
         \toprule
-        \textbf{Name} & \textbf{Purity / Grade}          & \textbf{Supplier} & \textbf{Role}    \\
+        \textbf{Nazwa}            & \textbf{Cechy}      & \textbf{Rola}               \\
         \midrule
-        Ethanol       & 99.9\%                           & Sigma-Aldrich     & Solvent          \\
-        Silicon Wafer & p-type, \textless100\textgreater & Wafer World       & Substrate        \\
-        PEDOT:PSS     & 1.3 wt\% dispersion              & Heraeus           & Conductive layer \\
+        Etanol                    & czysty\%            & Przemywanie                 \\
+        \ce{AgNO3}                & 99.8\%              & Prekursor nanodrutów        \\
+        \ce{CuCl2*2H2O}           & AR                  & Ziarna indukujące wzrost 1D \\
+        NaCl                      & 99.5\%              & Poźniejsza charakteryzacja  \\
+        PVP (Poliwinylopirolidon) & Mw = 360 000        & Capping agent               \\
+        PVB (Poliwinylobutyral)   & Mw = 170 000        & Wspomaganie adhezji         \\
+        Aceton                    & 99.5\%              & Przemywanie                 \\
+        Glikol etylenowy          & 99.5\%              & Redukcja prekursora         \\
+        Gąbka melaminowa          & typu "magic eraser" & Główny szkielet elektrody   \\
         \bottomrule
     \end{tabular}
 \end{table}
 
-\section{Preparation}
-Describe any preparatory steps, such as:
+\section{Synteza i depozycja}
+
+\subsection{Synteza nanodrutów (AgNWs)}
+\subsubsection{Metoda zastosowana w artykule}
+Do kolby zawierającej 100 mL EG wprowadzić kolejno:
 \begin{itemize}
-    \item Cleaning of substrates using solvents
-    \item Preheating or calibration of equipment
-    \item Solution preparation or mixing ratios
+    \item 0.8 g PVP
+    \item 1.0 g \ce{AgNO3}
 \end{itemize}
+mieszając do całkowitego rozpuszczenia. Następnie dodać 1.6 mL roztworu \ce{CuCl2*2H2O} w EG (3.3 mM) i delikatnie mieszać. Całą mieszaninę umieścić w temperaturze $130^\circ$C na 3 godziny. Po reakcji, roztwór poddać trzykrotnej sedymentacji (wirówka 3000 rpm przez 10 minut) z acetonem i etanolem. Ostatecznie rozproszyć nanodruty w etanolu, tworząc roztwór 100 mg/g do dalszego użycia.
 
-\section{Process / Experimental Procedure}
-Outline each step of the main experimental process. Include:
-\begin{itemize}
-    \item Temperatures and durations
-    \item Concentrations and volumes
-    \item Equipment settings and sequences
-\end{itemize}
+\subsubsection{Zmodyfikowana metoda poliolowa na podstawie \emph{S. Nuriyeva et al.} \cite{PoliolMod}}
+Blindtext
 
-\section{Characterisation Techniques}
-\subsection*{Scanning Electron Microscopy (SEM)}
-\textbf{Instrument:} Zeiss Sigma 300 \\
-Used for surface morphology imaging. Operated at 5–10 kV.
+\subsection{Przygotowanie porowatych elektrod AgPMS}
+Melaminową gąbkę pociąć na cylindry o wysokości 1.0 cm i średnicy 0.4 cm. Rozpuścić 0.8 g PVB w 100 mL etanolu, ogrzewając do $80^\circ$C przez 40 minut, a następnie ostudzić do temperatury pokojowej. Dodać 1.5 g wcześniej przygotowanego roztworu AgNWs w etanolu i mieszać przez 10 minut. Gąbki zanurzyć w otrzymanym roztworze i poddać infiltracji próżniowej (minimum 2000 Pa, 10 minut). Po naturalnym wysuszeniu uzyskuje się gotowe AgPMS.
 
-\subsection*{X-ray Diffraction (XRD)}
-\textbf{Instrument:} Bruker D8 Advance \\
-Used to determine crystalline structure. Scanned from 10° to 80° in 2$\theta$.
+\section{Charakteryzacja}
+\subsection{Skaningowy Mikroskop Elektronowy (SEM)}
+Należy wykonać charakteryzację SEM w celu oceny morfologii NWs na szkielecie melaminowym oraz jego pokrycie.
 
-\section{Results and Discussion}
-Include figures, graphs, or tables of results:
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{example-image}
-    \caption{Example result: surface morphology at 10kV SEM}
-\end{figure}
+\subsection{Dyfrakcja Roentgenowska (XRD)}
+Pomiar dyfrakcyjny ma na celu potwierdzenie obecności krystalicznego srebra. Można go wykonać na na wysuszonym, sproszkowanym roztworze AgNWs i PVB.
 
-Discuss trends, anomalies, and how the results align with expectations or literature.
+\bibliographystyle{ieeetr}
+\bibliography{refs}
 
-\section{Conclusions}
-Summarise:
-\begin{itemize}
-    \item Main findings
-    \item Whether objectives were met
-    \item Any limitations or sources of error
-    \item Suggestions for improvement or further research
-\end{itemize}
-
-\section*{References}
-\begin{itemize}
-    \item J. Smith et al., \textit{Journal of Applied Physics}, 2022, 120(3), 1234.
-    \item Equipment manuals and data sheets
-    \item Scientific articles, standards
-\end{itemize}
-
-\appendix
-\section*{Appendix}
-Include raw data, code, calculations, or safety data sheets.
 
 \end{document}
